@@ -11,9 +11,11 @@ public class Gerente {
     }
 
     public void faca() {
-        int idadeVoto = this.id.getIdade();
-        int retornoIdadeVoto = this.umaI.leiaIdade(idadeVoto);
-        int retorno = this.umaI.mostrarResultado(idadeVoto);
-        
+        while(true){
+            
+        this.umaI.apresenta();
+        ResultadoVoto i = this.id.retornarVoto();
+        this.umaI.calculaIdade(i);
+        }
     }
 }

@@ -14,33 +14,24 @@ public class IdadeVoto {
         this.idade = idade;
     }
 
-    public int retornarVoto() {
+    public ResultadoVoto retornarVoto() {
         int menorIdade = 16;
         int maiorIdade = 18;
         int melhorIdade = 70;
 
-        // ERRO AQUI 
-        if (idade < menorIdade) { 
-            return this.retornarVoto(); 
+        if (idade <= menorIdade) { 
+            return ResultadoVoto.NAO_VOTA;
         }
         if(idade>=maiorIdade){
-            return this.idadeAtual;
-        }
-
-        if (idade < menorIdade) {
-            return this.getIdadeAtual();
-        }
-        if (idade >= menorIdade && idade < maiorIdade) {
-        }
-        if (idade >= maiorIdade && idade <= melhorIdade) {
+            return ResultadoVoto.VOTO_OBRIGATORIO;
         }
         if (idade >= melhorIdade) {
-        } else {
-
+            return ResultadoVoto.VOTO_NAO_OBRIGATORIO;
         }
-        return 0;
+        return null;
     }
-
+    
+    
     public int getIdadeAtual() {
         return idadeAtual;
     }
